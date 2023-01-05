@@ -4,7 +4,7 @@ import bg from '../../../assets/images/bg.png'
 import PrimaryButton from '../../../components/PrimaryButton/PrimaryButton';
 const Banner = () => {
     return (
-        <div className="hero" style={{
+        <div className="hero h-[750px]" style={{
             backgroundImage: `url(${bg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'

@@ -6,7 +6,7 @@ import bg from '../../../assets/images/bg.png'
 const AppointmentBanner = ({selectedDate, setSelectedDate}) => {
     return (
         <header className='my-6' >
-            <div className="hero" style={{
+            <div className="hero h-[550px]" style={{
             backgroundImage: `url(${bg})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
