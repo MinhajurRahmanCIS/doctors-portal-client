@@ -16,7 +16,6 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
         const email = form.email.value;
         const phone = form.phone.value;
         form.reset();
-        console.log(name, email, phone, date, slot);
 
         const booking = {
             appointmentDate: date,

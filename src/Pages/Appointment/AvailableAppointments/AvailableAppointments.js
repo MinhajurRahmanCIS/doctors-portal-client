@@ -7,8 +7,7 @@ import AvailableAppointmentOptions from './AvailableAppointmentOptions';
 
 const AvailableAppointments = ({ selectedDate }) => {
     const [treatment, setTreatment] = useState(null);
-    const date = format(selectedDate, 'PP')
-    console.log(date)
+    const date = format(selectedDate, 'PP');
     const { data: appointmentOptions = [], refetch, isLoading } = useQuery({
         queryKey: ['appointmentOptions', date],
         queryFn: async () => {

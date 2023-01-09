@@ -21,7 +21,6 @@ const Login = () => {
     }
 
     const handleLogin = data => {
-        console.log(data);
         setLoginError('');
         signIn(data.email, data.password)
             .then(result => {
@@ -31,7 +30,6 @@ const Login = () => {
                 setLoginUserEmail(data.email);
             })
             .catch(error => {
-                console.log(error.message)
                 setLoginError(error.message);
                 toast.error("Something Wrong! Try Again");
             });
