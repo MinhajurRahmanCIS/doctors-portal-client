@@ -4,7 +4,7 @@ import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../../context/AuthProvider';
 
 const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
-    const { name: treatmentName, slots } = treatment;
+    const { name: treatmentName, slots, price } = treatment;
     const date = format(selectedDate, 'PP');
     const { user } = useContext(AuthContext);
 
@@ -14,6 +14,7 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
         const slot = form.slot.value;
         const name = form.name.value;
         const email = form.email.value;
+        const price = form.price.value;
         const phone = form.phone.value;
         form.reset();
 
@@ -23,7 +24,8 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
             patient: name,
             slot,
             email,
-            phone,
+            price,
+            phone
 
         }
         fetch('http://localhost:5000/bookings', {
@@ -66,6 +68,7 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
                         </select>
                         <input type="name" name='name' defaultValue={user?.displayName} disabled placeholder="Full Name" className="input w-full input-bordered" required />
                         <input type="email" name='email' defaultValue={user?.email} disabled placeholder="Email" className="input w-full input-bordered" required />
+                        <input type="price" name='price' defaultValue={price} disabled placeholder="Price" className="input w-full input-bordered" required />
                         <input type="text" name='phone' placeholder="Phone Number" className="input w-full input-bordered" required />
                         <br />
                         <input className='btn btn-accent w-full' type="submit" value="Submit" />
